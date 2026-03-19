@@ -1,0 +1,218 @@
+PROJECT CONTEXT  – CSDC ATTENDANCE SYSTEM
+full-stack web application for a college tech club called **Chathurya Student Developer Club (CSDC)**.
+
+The system is a **QR-based event attendance platform**.
+
+The **React frontend is already built**, and the backend is being integrated using **Node.js, Express, and MongoDB (Atlas)**.
+
+Frontend stack:
+React
+React Router
+Tailwind CSS
+DaisyUI
+
+Frontend folder structure:
+
+src/
+components/
+Navbar.jsx
+Sidebar.jsx
+
+pages/
+Login.jsx
+Register.jsx
+Dashboard.jsx
+Profile.jsx
+Events.jsx
+QR.jsx
+About.jsx
+
+data/
+users.js
+activities.js
+
+App.jsx
+main.jsx
+
+public/
+logo.png
+
+Frontend behavior:
+
+Login page
+Uses **username + password** (NOT email).
+
+Register page
+Registers a user.
+
+Dashboard page shows:
+• Member search
+• Stats cards (members, events, attendance count)
+• Recent activities
+
+Profile page route:
+
+/profile/:username
+
+Displays:
+• Avatar
+• Name
+• Member ID
+• Email
+• QR Code
+• Event timeline
+
+Profile page shows the user's QR code (memberId).
+
+Events page workflow:
+
+Create Event → Activate Event → QR Scanner marks attendance.
+
+About page shows club info and logo.
+
+Navbar appears across pages.
+Sidebar opens from the navbar.
+
+Sidebar items:
+• Profile
+• Events (Attendance)
+• About
+
+BACKEND IMPLEMENTATION
+
+Backend stack:
+Node.js
+Express
+MongoDB Atlas
+Mongoose
+JWT authentication
+bcryptjs
+dotenv
+cors
+
+Server folder structure:
+
+server/
+config/
+db.js
+
+controllers/
+authController.js
+eventController.js
+
+middleware/
+authMiddleware.js
+
+models/
+User.js
+Event.js
+
+routes/
+authRoutes.js
+eventRoutes.js
+
+server.js
+.env
+
+DATABASE MODELS
+
+User Model:
+
+memberId (unique)
+username (unique)
+name
+email (unique)
+password
+events [
+{
+name
+date
+}
+]
+
+Event Model:
+
+eventId (auto-generated like EVT001)
+title
+date
+attendees [
+User ObjectId
+]
+
+WORKING BACKEND FEATURES
+
+User registration
+
+POST
+/api/auth/register
+
+Fields:
+memberId
+username
+name
+email
+password
+
+User login
+
+POST
+/api/auth/login
+
+Fields:
+username
+password
+
+Returns JWT token.
+
+Auth middleware
+
+Authorization header format:
+
+Bearer TOKEN
+
+Create event
+
+POST
+/api/events/create
+
+Body:
+title
+date
+
+eventId auto-generated.
+
+Mark attendance
+
+POST
+/api/events/attendance
+
+Body:
+eventId
+memberId
+
+Process:
+
+1. Find event
+2. Find user
+3. Add user to event.attendees
+4. Add event to user.events timeline
+
+DATABASE
+
+MongoDB Atlas cluster connected successfully.
+
+Collections currently used:
+users
+events
+
+CURRENT STATUS
+
+Completed:
+User registration
+User login
+JWT authentication
+Event creation
+Attendance marking
+
+Backend APIs tested successfully using Postman.
+
