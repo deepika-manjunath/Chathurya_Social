@@ -19,9 +19,9 @@ It uses JWT-based authentication and QR codes for seamless attendance tracking.
 - Auth: JSON Web Token (JWT)
 
 ## Project Structure
-root/
-├── frontend/
-├── server/
+root/<br>
+├── frontend/<br>
+├── server/<br>
 └── README.md
 
 ## Setup
@@ -38,30 +38,22 @@ cd server && npm install
 cd ../frontend && npm install
 
 # Environment Variables
-Create .env in /server:
-
-PORT=5000
-
-MONGO_URI=your_mongo_uri
-
+Create .env in /server:<br>
+PORT=5000<br>
+MONGO_URI=your_mongo_uri<br>
 JWT_SECRET=your_secret
 
 # Run
 # backend
-cd server
-
+cd server<br>
 npm run dev
 
 # frontend
-cd frontend
-
+cd frontend<br>
 npm start
 
 # QR Attendance Flow
-User logs in
-
-QR code generated per user
-
-Scan via web app
-
+User logs in<br>
+QR code generated per user<br>
+Scan via web app<br>
 Attendance stored with timestamp
