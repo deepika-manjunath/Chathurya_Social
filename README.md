@@ -28,8 +28,8 @@ root/
 
 bash
 # Clone repo
-git clone <repo-url>
-cd <repo-name>
+git clone <--repo-url-->
+cd <--repo-name-->
 
 # Install dependencies
 cd server && npm install
