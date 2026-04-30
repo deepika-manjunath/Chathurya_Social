@@ -50,7 +50,7 @@ npm run dev
 
 # frontend
 cd frontend<br>
-npm start
+npm run dev
 
 # QR Attendance Flow
 User logs in<br>
