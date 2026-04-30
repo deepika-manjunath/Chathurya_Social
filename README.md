@@ -29,29 +29,39 @@ root/
 bash
 # Clone repo
 git clone <--repo-url-->
+
 cd <--repo-name-->
 
 # Install dependencies
 cd server && npm install
+
 cd ../frontend && npm install
 
 # Environment Variables
 Create .env in /server:
+
 PORT=5000
+
 MONGO_URI=your_mongo_uri
+
 JWT_SECRET=your_secret
 
 # Run
 # backend
 cd server
+
 npm run dev
 
 # frontend
 cd frontend
+
 npm start
 
 # QR Attendance Flow
 User logs in
+
 QR code generated per user
+
 Scan via web app
+
 Attendance stored with timestamp
